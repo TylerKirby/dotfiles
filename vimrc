@@ -23,10 +23,8 @@ Plugin 'vim-scripts/Pydiction'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 "auto-completion stuff
-Plugin 'klen/python-mode'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
-""code folding
 Plugin 'tmhedberg/SimpylFold'
 "Colors!!!
 Plugin 'altercation/vim-colors-solarized'
@@ -40,6 +38,7 @@ filetype plugin indent on    " enables filetype detection
 let g:SimpylFold_docstring_preview = 1
 
 "autocomplete
+let g:pydiction_location = '/Users/tyler/.vim/bundle/Pydiction/complete-dict'
 let g:ycm_autoclose_preview_window_after_completion=1
 
 "custom keys
@@ -57,7 +56,7 @@ set noswapfile
 set nu
 ":set tags=~/mytags "tags for ctags and taglist
 "omnicomplete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python3 set omnifunc=pythoncomplete#Complete
 "------------Start Python PEP 8 stuff----------------
 " Number of spaces that a pre-existing tab is equal to.
 au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
